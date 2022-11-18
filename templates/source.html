@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block code %}{{ code }}{% endblock %}
+{% block compiler %}
+    {% for lan in compilers %}
+        <option value="{{ lan[0] }}"> {{ lan[0] }}</option>
+    {% endfor %}
+{% endblock %}
+{% block question %}{{ question }}{% endblock %}
+{% block lang %}
+    {% for lan in compilers %}
+        <a href="{{ lan[1] }}">{{ lan[0] }}</a>
+        <br/>
+    {% endfor %}
+{% endblock %}
+{% block level %}
+    {% for i in level %}
+        <br>
+        <a href="{{ i[1] }}">{{ i[0] }}</a>
+        <br>
+    {% endfor %}
+{% endblock %}
+{% block a_question %}
+    {% for i in t_question %}
+        <a href="{{ i[1] }}">
+            <p style="{{ i[2] }}">{{ i[0] }}</p>
+        </a>
+    {% endfor %}
+{% endblock %}
+{% block a_read %}
+    {% for i in t_read %}
+        <p>{{ i }}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/source.css') }}">
+    <title>Code Acceptor</title>
+</head>
+<body>
+<div class="page">
+    <div class="info">
+        <h1 class="green">BuildIt Source Code</h1>
+        <p class="grey">Give details for posting the script</p>
+    </div>
+
+    <form action="/source" method="post">
+        <div class="form">
+            <textarea id="code" name="code" rows="50" cols="40" style="width: 371px; height: 203px"
+                      placeholder="{% block code %}{% endblock %}"></textarea>
+            <select id="compiler" name="compiler">
+                {% block compiler %}
+                {% endblock %}
+            </select>
+            <input type="text" id="question" name="question" value="{% block question %}{% endblock %}">
+        </div>
+        <div class="submit">
+            <input id="submit" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<div class="scrap">
+    <div class="lang">
+        {% block lang %}
+        {% endblock %}
+    </div>
+    <div class="level">
+        {% block level %}
+        {% endblock %}
+    </div>
+    <div class="a_question">
+        {% block a_question %}
+        {% endblock %}
+    </div>
+    <div class="a_read">
+        {% block a_read %}
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
