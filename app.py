@@ -1,6 +1,7 @@
 from mod.login import app_login, error_login
 from mod.scrap import scrap_lang, scrap_level, scrap_question, scrap_read
 from flask import Flask, render_template, request, redirect, url_for
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'cH@c~nE9C=MxUfBQ7M,J:=K^ABJfdn8kMXZJv}>aCGoKY9UG>&?-51*s"HeJX@'
