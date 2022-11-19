@@ -1,16 +1,6 @@
 beautifulsoup4
-brotlipy
-certifi==2022.9.24
-cffi
-charset-normalizer
-cryptography
-idna
-pycparser
-pyOpenSSL
-PySocks
 requests
 soupsieve
 urllib3
-win-inet-pton
 Flask
 Gunicorn
