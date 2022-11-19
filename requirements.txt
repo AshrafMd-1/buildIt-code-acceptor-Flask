@@ -1,4 +1,4 @@
-﻿beautifulsoup4
+beautifulsoup4
 brotlipy
 certifi==2022.9.24
 cffi
