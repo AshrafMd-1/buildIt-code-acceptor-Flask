@@ -37,6 +37,7 @@ def login_post():
         else:
             global error
             error = error_login(u)
+            return redirect('/')
     else:
         return render_template(source_code, compilers=compilers, code=code, question=question, level=level,
                                t_question=t_question, t_read=t_read)
@@ -76,3 +77,6 @@ def reads(al_read):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('err_404.html')
+
+if __name__ == '__main__':
+    app.run(debug=False)

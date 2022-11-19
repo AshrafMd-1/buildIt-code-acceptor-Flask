@@ -22,7 +22,7 @@
 {% block a_question %}
     {% for i in t_question %}
         <a href="{{ i[1] }}">
-            <p style="{{ i[2] }}">{{ i[0] }}</p>
+            <p style="{{ 'color:'+i[2][12:] }}">{{ i[0] }}</p>
         </a>
     {% endfor %}
 {% endblock %}
