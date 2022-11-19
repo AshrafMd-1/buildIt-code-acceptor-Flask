@@ -81,4 +81,4 @@ def page_not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=False, port=os.getenv("PORT", default=5000))
