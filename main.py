@@ -1,7 +1,7 @@
 from mod.login import app_login, error_login
 from mod.scrap import scrap_lang, scrap_level, scrap_question, scrap_read
 from flask import Flask, render_template, request, redirect, url_for
-from mod.submit import submit_code, al_code
+from mod.submit import submit_code
 from mod.script_variable import c_id
 import os
 
@@ -77,10 +77,9 @@ def levels_q(al_ques, al_lan):
 
 @app.route('/tutorials/questions/<path:al_read>', methods=['GET'])
 def reads(al_read):
-    global t_read, question, code
+    global t_read, question
     question = al_read[4:]
     t_read = scrap_read(session, al_read)
-    code = al_code(session, question)
     return redirect(logins)
 
 
