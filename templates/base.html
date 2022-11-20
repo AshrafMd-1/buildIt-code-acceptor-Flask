@@ -11,7 +11,7 @@
         <p class="grey">Give details for posting the script</p>
     </div>
 
-    <form action="/source" method="post">
+    <form action="/code" method="post">
         <div class="form">
             <textarea id="code" name="code" rows="50" cols="40" style="width: 371px; height: 203px"
                       placeholder="Type Your Code">{% block code %}{% endblock %}</textarea>
@@ -19,12 +19,32 @@
                 {% block compiler %}
                 {% endblock %}
             </select>
-            <input type="text" id="question" name="question" placeholder="Question Number" value="{% block question %}{% endblock %}">
+            <input type="text" id="question" name="question" placeholder="Question Number"
+                   value="{% block question %}{% endblock %}">
         </div>
         <div class="submit">
             <input id="submit" type="submit" value="Submit">
         </div>
     </form>
+</div>
+<div class="result">
+    <div class="score">
+        {% block score %}
+        {% endblock %}
+    </div>
+    <div class="rsp">
+        <p style="color:#E91E63 ">Result:&nbsp{% block rsp %}{% endblock %}</p>
+    </div>
+    <div class="time">
+        {% block time %}
+        {% endblock %}
+    </div>
+</div>
+<div class="question-read">
+    <div class="a_read">
+        {% block a_read %}
+        {% endblock %}
+    </div>
 </div>
 <div class="scrap">
     <div class="lang">
@@ -37,10 +57,6 @@
     </div>
     <div class="a_question">
         {% block a_question %}
-        {% endblock %}
-    </div>
-    <div class="a_read">
-        {% block a_read %}
         {% endblock %}
     </div>
 </div>
