@@ -18,7 +18,7 @@ code = ""
 compilers = []
 stance = "Not Submitted"
 cm = ""
-rs = [stance, stance, stance]
+rs = [stance, stance, [stance]]
 question = ""
 source_code = "source.html"
 logins = '/login'
@@ -35,7 +35,7 @@ def login():  # put application's code here
     code = ""
     compilers = []
     cm = ""
-    rs = [stance, stance, stance]
+    rs = [stance, stance, [stance]]
     question = ""
     if error == "":
         return render_template('login.html', error=error)
