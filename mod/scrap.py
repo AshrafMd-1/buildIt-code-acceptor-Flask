@@ -41,7 +41,7 @@ def scrap_level(session, url):
     for i in range(len(lil)):
         all_li = [lil[i], al[i]]
         level.append(all_li)
-    return level
+    return level[:-3]
 
 
 def scrap_question(session, url):
