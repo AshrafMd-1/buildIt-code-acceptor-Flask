@@ -16,8 +16,9 @@ t_read = []
 course = ""
 code = ""
 compilers = []
+stance = "Not Submitted"
 cm = ""
-rs = ["Not Submitted", "Not Submitted", ['Not Submitted']]
+rs = [stance, stance, stance]
 question = ""
 source_code = "source.html"
 logins = '/login'
@@ -25,8 +26,7 @@ logins = '/login'
 
 @app.route('/')
 def login():  # put application's code here
-    
-    global lin,level,t_question, t_read, course, code,compilers, cm,rs,question,error
+    global lin, level, t_question, t_read, course, code, compilers, cm, rs, question, error
     lin = ""
     level = []
     t_question = []
@@ -35,15 +35,16 @@ def login():  # put application's code here
     code = ""
     compilers = []
     cm = ""
-    rs = ["Not Submitted", "Not Submitted", ['Not Submitted']]
+    rs = [stance, stance, stance]
     question = ""
-    if error=="":
+    if error == "":
         return render_template('login.html', error=error)
     else:
-        a=""
-        a=error
-        error=""
+        a = ""
+        a = error
+        error = ""
         return render_template('login.html', error=a)
+
 
 @app.route(logins, methods=['POST', 'GET'])
 def login_post():
@@ -67,7 +68,6 @@ def login_post():
                                t_question=t_question, t_read=t_read, rs=rs)
 
 
-
 @app.route('/tutorials/<al_lan>', methods=['GET'])
 def levels_t(al_lan):
     global level, t_question, t_read, course
@@ -83,9 +83,9 @@ def levels_q(al_ques, al_lan):
     global t_question, lin
     lin = al_lan + '/' + al_ques
     t_question = scrap_question(session, lin)
-    global code,t_read
-    t_read=[]
-    code=""
+    global code, t_read
+    t_read = []
+    code = ""
     return redirect(logins)
 
 
