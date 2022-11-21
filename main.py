@@ -26,7 +26,7 @@ logins = '/login'
 @app.route('/')
 def login():  # put application's code here
     
-    global lin,level,t_question, t_read, course, code,compilers, cm,rs,question 
+    global lin,level,t_question, t_read, course, code,compilers, cm,rs,question,error
     lin = ""
     level = []
     t_question = []
@@ -37,10 +37,9 @@ def login():  # put application's code here
     cm = ""
     rs = ["Not Submitted", "Not Submitted", ['Not Submitted']]
     question = ""
-    if end=="":
+    if error=="":
         return render_template('login.html', error=error)
     else:
-        global error
         a=""
         a=error
         error=""
