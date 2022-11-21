@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="eng">
 <head>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/source.css') }}">
     <title>Code Acceptor</title>
 </head>
@@ -29,7 +33,7 @@
 </div>
 <div class="result">
     <div class="score">
-    <p style="color: lightcyan">Score:&nbsp</p>
+        <p style="color: lightcyan">Score:&nbsp</p>
         {% block score %}
         {% endblock %}
     </div>
@@ -37,7 +41,7 @@
         <p style="color:#E91E63 ">Result:&nbsp{% block rsp %}{% endblock %}</p>
     </div>
     <div class="time">
-    <p style="color: #FFEB3B">Time:&nbsp</p>
+        <p style="color: #FFEB3B">Time:&nbsp</p>
         {% block time %}
         {% endblock %}
     </div>
