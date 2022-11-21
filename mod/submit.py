@@ -20,4 +20,7 @@ def submit_code(session, code, question, comp, course):
     res = session.post(validate_url, data=validate_payload, headers=validate_headers)
     result = json.loads(res.content)
     end = timer()
-    return [end - start, result["score"], result["result"], ]
+    try:
+        return [end - start, result["score"], result["result"], ]
+    except:
+        return [end - start, "error", [result['message']]]

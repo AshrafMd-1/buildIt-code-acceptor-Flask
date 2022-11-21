@@ -13,7 +13,7 @@
     {% endfor %}
 {% endblock %}
 {% block score %}
-    <p style="color: lightcyan">{{ 'Score: '+rs[1] }}</p>
+    <p style="color: lightcyan">{{ rs[1] }}</p>
 {% endblock %}
 {% block rsp %}
     {% for r in rs[2] %}
@@ -21,7 +21,7 @@
     {% endfor %}
 {% endblock %}
 {% block time %}
-    <p style="color: #FFEB3B">{{ 'Time: '+ rs[0] }}</p>
+    <p style="color: #FFEB3B">{{  rs[0] }}</p>
 {% endblock %}
 {% block level %}
     {% for i in level %}
