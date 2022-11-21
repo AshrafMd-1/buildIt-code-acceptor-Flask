@@ -25,8 +25,25 @@ logins = '/login'
 
 @app.route('/')
 def login():  # put application's code here
-    return render_template('login.html', error=error)
-
+    
+    global lin,level,t_question, t_read, course, code,compilers, cm,rs,question,error
+    lin = ""
+    level = []
+    t_question = []
+    t_read = []
+    course = ""
+    code = ""
+    compilers = []
+    cm = ""
+    rs = ["Not Submitted", "Not Submitted", ['Not Submitted']]
+    question = ""
+    if error=="":
+        return render_template('login.html', error=error)
+    else:
+        a=""
+        a=error
+        error=""
+        return render_template('login.html', error=a)
 
 @app.route(logins, methods=['POST', 'GET'])
 def login_post():
@@ -50,12 +67,6 @@ def login_post():
                                t_question=t_question, t_read=t_read, rs=rs)
 
 
-@app.route('/source', methods=['POST'])
-def source():
-    source = request.form.get('source')
-    print(source)
-    return render_template('source.html')
-
 
 @app.route('/tutorials/<al_lan>', methods=['GET'])
 def levels_t(al_lan):
@@ -72,6 +83,9 @@ def levels_q(al_ques, al_lan):
     global t_question, lin
     lin = al_lan + '/' + al_ques
     t_question = scrap_question(session, lin)
+    global code,t_read
+    t_read=[]
+    code=""
     return redirect(logins)
 
 
