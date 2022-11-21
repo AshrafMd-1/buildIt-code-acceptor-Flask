@@ -37,8 +37,14 @@ def login():  # put application's code here
     cm = ""
     rs = ["Not Submitted", "Not Submitted", ['Not Submitted']]
     question = ""
-    return render_template('login.html', error=error)
-
+    if end=="":
+        return render_template('login.html', error=error)
+    else:
+        global error
+        a=""
+        a=error
+        error=""
+        return render_template('login.html', error=a)
 
 @app.route(logins, methods=['POST', 'GET'])
 def login_post():
