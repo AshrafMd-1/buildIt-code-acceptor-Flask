@@ -67,12 +67,6 @@ def login_post():
                                t_question=t_question, t_read=t_read, rs=rs)
 
 
-@app.route('/source', methods=['POST'])
-def source():
-    source = request.form.get('source')
-    print(source)
-    return render_template('source.html')
-
 
 @app.route('/tutorials/<al_lan>', methods=['GET'])
 def levels_t(al_lan):
@@ -89,6 +83,9 @@ def levels_q(al_ques, al_lan):
     global t_question, lin
     lin = al_lan + '/' + al_ques
     t_question = scrap_question(session, lin)
+    global code,t_read
+    t_read=[]
+    code=""
     return redirect(logins)
 
 
