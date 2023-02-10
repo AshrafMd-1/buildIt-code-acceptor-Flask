@@ -92,9 +92,10 @@ def levels_q(al_ques, al_lan):
 
 @app.route('/tutorials/questions/<path:al_read>', methods=['GET'])
 def reads(al_read):
-    global t_read, question
+    global t_read, question,code
     question = al_read[4:]
     code = get_answers(session, al_read)
+    print(code)
     t_read = scrap_read(session, al_read)
     return redirect(logins)
 
