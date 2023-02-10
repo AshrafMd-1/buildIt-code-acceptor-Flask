@@ -11,10 +11,14 @@ def app_login(username_f, password_f):
     }
     response = s.post(url, data=payload)
     u = response.text
-    return s, u
+    if 'window.location.href = "http://buildit.iare.ac.in/"' in u:
+        return s, True
+    else:
+        return s, u
 
 
 def error_login(u):
     soup = BeautifulSoup(u)
-    full_error = soup.select("body > section.page-title.bg-primary.position-relative > div > div > div > h1")[0]
+    full_error = soup.select(
+        "body > section.page-title.bg-primary.position-relative > div > div > div > h1")[0]
     return full_error.text
