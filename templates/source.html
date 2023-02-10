@@ -2,7 +2,7 @@
 {% block code %}{{ code }}{% endblock %}
 {% block compiler %}
     {% for lan in compilers %}
-        <option value="{{ lan[0] }}"> {{ lan[0] }}</option>
+        <option value="{{ lan[0] }}" {{ "selected" if lan[0]=="Python" else "" }}> {{ lan[0] }}</option>
     {% endfor %}
 {% endblock %}
 {% block question %}{{ question }}{% endblock %}
