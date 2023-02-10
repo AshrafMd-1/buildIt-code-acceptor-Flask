@@ -3,6 +3,7 @@ from mod.scrap import scrap_lang, scrap_level, scrap_question, scrap_read
 from flask import Flask, render_template, request, redirect, url_for
 from mod.submit import submit_code
 from mod.script_variable import c_id
+from mod.answers import get_answers
 import os
 
 app = Flask(__name__)
@@ -93,6 +94,7 @@ def levels_q(al_ques, al_lan):
 def reads(al_read):
     global t_read, question
     question = al_read[4:]
+    code = get_answers(session, al_read)
     t_read = scrap_read(session, al_read)
     return redirect(logins)
 
@@ -114,5 +116,5 @@ def page_not_found(e):
     return render_template('err_404.html')
 
 
-#if __name__ == '__main__':
+# if __name__ == '__main__':
 #    app.run(debug=False, port=os.getenv("PORT", default=5000))
