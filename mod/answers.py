@@ -7,8 +7,8 @@ def get_answers(session, qid):
     headers = {
         "authorization": session.cookies['token'],
         "content-type": "application/json"}
-    response = requests.get(i, headers=headers)
+    response = requests.get(url, headers=headers)
     ans = json.loads(response.text)
     for j in ans:
-        if j['score'] == 100 and j['languageId'] == 34:
+        if j['score'] == 100 and j['languageId'] == '34':
             return str(j['sourceCode'])
